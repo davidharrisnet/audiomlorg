@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Product } from '../product/product'; 
 import { Hammer } from '../product/parts/hammer';
+import { Fork } from '../product/parts/fork';
 
 @Component({
   selector: 'product-list',
@@ -37,5 +38,7 @@ import { Hammer } from '../product/parts/hammer';
   constructor() {
     let hammer:Hammer = new Hammer(5,'Hammer', 300);
     this.products.push(hammer);
+    let fork:Fork = new Fork(6,'Fork', 300);
+    this.products.push(fork);
   }    
 }
