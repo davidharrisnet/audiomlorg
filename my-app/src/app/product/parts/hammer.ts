@@ -1,5 +1,7 @@
+import { NgModule } from '@angular/core';
 import { Product } from '../product'
 
+@NgModule
 export class Hammer implements Product {
     id: number;
     title: string;
