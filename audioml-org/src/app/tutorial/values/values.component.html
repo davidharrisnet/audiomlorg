@@ -1,0 +1,9 @@
+<div>
+
+    <button class="btn btn-primary" height="20" (click)=setInput()>ClickMe</button>
+    <button class="btn btn-primary" height="20" (click)=setSignalValue()>SignalMe</button>
+    <div> 
+        Event: <input  type="text"  size="20" placeholder="" value="{{ input_value }}">
+        Signal: <input  type="text"  size="20" placeholder="" value="{{ signal_value().value }}">
+    </div> 
+</div>

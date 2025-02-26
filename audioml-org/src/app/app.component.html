@@ -10,20 +10,20 @@
       <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-     
-      
+        </li>           
       </ul>
     </div>
   </div>
 </nav>
+
 <main class="main">
    {{ title }}
-   <div>
-   <button class="btn btn-primary" (click)="sayHello()">Hello</button>
-   Message:<H4>{{hello_message}}</H4>
-   </div>
-</main>
+   <app-values></app-values>
 
+   <app-input [item]="currentItem" ></app-input> <!-- @Input -->
+
+  <app-output >Output</app-output>
+   
+</main>
 
 <router-outlet />

@@ -1,20 +1,52 @@
-import { Component } from '@angular/core';
+import { Component, Input,Output,EventEmitter} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { AudioService } from './audio.service';
+import { ConfigService } from './config.service';
+import { ValuesComponent} from './tutorial/values/values.component';
+import { InputComponent} from './tutorial/input/input.component';
+import { OutputComponent } from './tutorial/output/output.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, 
+            ValuesComponent, // This is necessary for the html to see app-values
+            InputComponent,
+            OutputComponent],
+
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
+  providers: [ AudioService, ConfigService]
 })
 export class AppComponent {
   title = 'Audio Machnine Learning';
-  hello_message:string="";
+  hello_message = "";
+  currentItem='Input Value from AppComponent'; // @Input
 
-  constructor(private http: HttpClient) { }
 
-  sayHello() {
+  
+  constructor(private http: HttpClient, 
+    private audioService: AudioService,
+    private configService :ConfigService) { 
+    console.log(audioService.Sounds.bang);
+
+  }
+
+  emitEvent(event: number) {
+    console.log(event);
+  }
+
+
+
+
+  sayHello2() {
+    this.http.get<string>("http://127.0.0.1:5000/").subscribe(buffer => {
+      console.log("The response is " + buffer);
+      this.hello_message = buffer;
+    })
+  }
+
+  sayHello1() {
     let url = "http://127.0.0.1:5000/";
     
 
@@ -32,6 +64,7 @@ export class AppComponent {
       }
     );
   }
+  
 }
 
 
