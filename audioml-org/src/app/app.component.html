@@ -22,7 +22,9 @@
 
    <app-input [item]="currentItem" ></app-input> <!-- @Input -->
 
-  <app-output >Output</app-output>
+
+  <app-output (myEvent)="handleEvent($event)"></app-output>
+  
    
 </main>
 

@@ -7,13 +7,11 @@ import { Component, Output, EventEmitter } from '@angular/core';
   styleUrl: './output.component.css'
 })
 export class OutputComponent {
-  @Output() incrementCountEvent = new EventEmitter<number>();
 
-  count = 0;
+  @Output() myEvent = new EventEmitter<string>();
 
-  emitEvent() {
-    this.count++;
-    this.incrementCountEvent.emit(this.count);
+  emitEvent() {   
+    this.myEvent.emit("Hello World!");
   }
 
  

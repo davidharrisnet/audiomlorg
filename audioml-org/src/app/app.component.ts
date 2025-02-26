@@ -23,8 +23,9 @@ export class AppComponent {
   hello_message = "";
   currentItem='Input Value from AppComponent'; // @Input
 
+  @Output('myEvent') 
+    emitEvent = new EventEmitter();
 
-  
   constructor(private http: HttpClient, 
     private audioService: AudioService,
     private configService :ConfigService) { 
@@ -32,10 +33,11 @@ export class AppComponent {
 
   }
 
-  emitEvent(event: number) {
+
+
+  handleEvent(event:string) {
     console.log(event);
   }
-
 
 
 
