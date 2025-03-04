@@ -1,14 +1,15 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ObservablesComponent } from './observables.component';
+import { provideHttpClient } from '@angular/common/http';
 
 describe('ObservablesComponent', () => {
   let component: ObservablesComponent;
   let fixture: ComponentFixture<ObservablesComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [ObservablesComponent]
+    await TestBed.configureTestingModule({      
+      providers: [ObservablesComponent,  provideHttpClient()]
     })
     .compileComponents();
 
