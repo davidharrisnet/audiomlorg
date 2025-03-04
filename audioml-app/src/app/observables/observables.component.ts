@@ -1,17 +1,18 @@
 import { Component } from '@angular/core';
-import { of, Observable } from 'rxjs';
+import { map, of, Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { HttpClientModule } from '@angular/common/http';
-import { catchError } from 'rxjs/operators';
+import { Product} from '../products/product'
+import  { ProductDTO } from '../products/products.service'
+import { ProductsService } from '../products/products.service'
 
 
 @Component({
   selector: 'app-observables',
-  imports: [HttpClientModule],
   templateUrl: './observables.component.html',
+  standalone:true,
   styleUrl: './observables.component.css',
-  providers: []
+  providers: [ProductsService]
 })
 
 @Injectable({
@@ -21,9 +22,10 @@ export class ObservablesComponent {
  
   message = "";
   helloUrl = "http://localhost:5000"
-  
 
-  constructor(private http: HttpClient) {
+
+  constructor(private http: HttpClient, 
+              private productService: ProductsService) {
     //this.arrayMethods();
 
     // Call subscribe() to start listening for geolocation updates.
@@ -37,6 +39,12 @@ export class ObservablesComponent {
       console.log("end");
     });
   }
+
+  getProducts() {
+    console.log("getProducts");
+    return this.productService.getProducts();
+  }
+  
 
 
   arrayMethods() {

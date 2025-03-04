@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-promises',
   imports: [],
   templateUrl: './promises.component.html',
+  standalone:true,
   styleUrl: './promises.component.css'
 })
 export class PromisesComponent {
