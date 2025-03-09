@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {RouterOutlet, RouterLink} from '@angular/router';
 import { UserComponent } from './user/user.component';
+import { StylesComponent} from './styles/styles.component'
 
 
 
@@ -9,7 +10,7 @@ import { UserComponent } from './user/user.component';
 @Component({
   
   selector: 'app-root',
-  imports: [RouterLink, RouterOutlet],
+  imports: [RouterLink, RouterOutlet, StylesComponent],
   providers: [UserComponent],
   templateUrl: './app.component.html',
   standalone:true,

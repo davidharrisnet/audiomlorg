@@ -1,0 +1,20 @@
+
+.more.styles {
+    color:orange;
+    font-size:xx-large;
+}
+
+#big {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size:small;
+}
+
+a[href] {font-weight: bold;}
+
+.bighref {
+    background-color: beige;
+}
+
+.planet[type="barren rocky"] 
+{font-weight: bold;
+ color: purple;}
