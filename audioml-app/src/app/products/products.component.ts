@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from './product';
 import { ProductsService } from './products.service'
-import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -9,7 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [HttpClientModule],
+  imports: [],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css'
 })
