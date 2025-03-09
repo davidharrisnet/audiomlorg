@@ -1,18 +1,28 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { PromisesComponent } from './promises/promises.component';
-import { ObservablesComponent } from './observables/observables.component';
-import { ProductsComponent } from "./products/products.component";
+import {RouterOutlet, RouterLink} from '@angular/router';
+import { UserComponent } from './user/user.component';
+
+
+
 
 
 @Component({
   
   selector: 'app-root',
-  imports: [RouterOutlet, ProductsComponent],
+  imports: [RouterLink, RouterOutlet],
+  providers: [UserComponent],
   templateUrl: './app.component.html',
   standalone:true,
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'audioml-app';
+  
+  constructor(private userComponent:UserComponent) {
+
+  }
+
+  openUserDialog() {
+    this.userComponent.openDialog();
+  }
+  title = 'Audio ML';
 }

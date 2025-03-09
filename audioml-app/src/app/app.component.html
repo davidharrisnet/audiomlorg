@@ -1,9 +1,13 @@
 
 <main class="main">
   <div class="content">
-    {{ title }}
-    
-    <app-products></app-products>
+    <h1>{{ title }}</h1>
+ 
+    <div>
+      <a routerLink="user">Press Here</a>
+  </div>
+    <button (click)="openUserDialog()">UserDialog</button>
+
    </div>
 </main>
 
